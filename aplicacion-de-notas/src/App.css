@@ -21,6 +21,7 @@ body {
 .custom-textContainer-bg {
   background-color: #c9ebf5; /* Gris claro */
   border: #92dcda;
+  
 }
 
 .custom-textContainer-bg:focus {
@@ -28,6 +29,24 @@ body {
    /* Opcional: elimina el box-shadow si lo deseas */
   /* Puedes añadir o modificar otros estilos para el estado :focus según necesites */
 }
+
+.note-container {
+  background-color: #c9ebf5; /* Color amarillo de post-it */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 1); /* Sombra suave */
+  border-radius: 20px; /* Bordes ligeramente redondeados */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: none; /* Elimina el borde */
+  box-shadow: none;
+}
+
+.note-container:hover {
+  transform: rotate(-4deg); /* Rotación neutral al pasar el cursor */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el cursor */
+}
+
+
 
 .App-header {
   background-color: #282c34;
