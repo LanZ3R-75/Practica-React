@@ -4,8 +4,11 @@ import NoteEditor from './componentes/NoteEditor';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
   const [notes, setNotes] = useState([]);
   const [busqueda, setBusqueda] = useState('');
+  //-----------
+  const [editarNota, setEditarNota ] = useState(null);
 
   // Cargar notas de localStorage al iniciar la aplicación
   useEffect(() => {
@@ -32,6 +35,9 @@ function App() {
     }
     setNotes(updatedNotes);
     saveNotes(updatedNotes); // Guardar después de actualizar
+    //--------
+    setEditarNota(null);
+
   };
 
   const handleDeleteNote = (noteId) => {
@@ -39,6 +45,11 @@ function App() {
     setNotes(updatedNotes);
     saveNotes(updatedNotes); // Guardar después de eliminar
   };
+
+  //-------------
+  const handleEditNote = (note) => {
+    setEditarNota(note);
+  };  
 
   const filteredNotes = notes.filter(note => 
 
@@ -61,11 +72,15 @@ function App() {
         />
       </div>
       <h5 htmlFor="noteTitle" className="form-label">Crear Nota</h5>
-      <NoteEditor onSave={handleSaveNote} />
+      
+      <NoteEditor onSave={handleSaveNote} onEdit={handleEditNote} editarNota={editarNota}/>
+
       <h5 htmlFor="noteTitle" className="form-label">Lista de Notas</h5>
-      <Notelist notes={filteredNotes} onDelete={handleDeleteNote} />
+
+      <Notelist notes={filteredNotes} onDelete={handleDeleteNote} onEdit={handleEditNote}/>
+
     </div>
   );
-}
+}//NoteEditor y Notelist tienen codigo que sobra si no funciona el editar
 
 export default App;

@@ -1,15 +1,24 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
+//------EDITARNOTA
+function NoteEditor({ onSave, editarNota}){
 
-function NoteEditor({ onSave }){
-
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
+    //------ los state de title y content
+    const [title, setTitle] = useState(editarNota ? editarNota.title : '');
+    const [content, setContent] = useState(editarNota ? editarNota.content : '');
     const titleRef = useRef(null);
 
+    //------
+    useEffect(() => {
+        // Actualiza los campos cuando la nota que se está editando cambia
+        setTitle(editarNota ? editarNota.title : '');
+        setContent(editarNota ? editarNota.content : '');
+    }, [editarNota]);
+    
+    //-------- onSave
     const handleSubmit = (e) => {
 
        e.preventDefault();
-       onSave({ title, content});
+       onSave({...editarNota, title, content});
        setTitle('');
        setContent('');
        titleRef.current.focus();
