@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Notelist from './componentes/NoteList';
 import NoteEditor from './componentes/NoteEditor';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
 
   const [notes, setNotes] = useState([]);
   const [busqueda, setBusqueda] = useState('');
-  //-----------
   const [editarNota, setEditarNota ] = useState(null);
 
   // Cargar notas de localStorage al iniciar la aplicación
@@ -35,7 +35,6 @@ function App() {
     }
     setNotes(updatedNotes);
     saveNotes(updatedNotes); // Guardar después de actualizar
-    //--------
     setEditarNota(null);
 
   };
@@ -46,7 +45,6 @@ function App() {
     saveNotes(updatedNotes); // Guardar después de eliminar
   };
 
-  //-------------
   const handleEditNote = (note) => {
     setEditarNota(note);
   };  
@@ -65,7 +63,7 @@ function App() {
         <h5 htmlFor="noteTitle" className="form-label">Buscar</h5>
         <input
           type="text"
-          className="form-control"
+          className="form-control custom-textContainer-bg"
           placeholder="Buscar nota..."
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
@@ -81,6 +79,6 @@ function App() {
 
     </div>
   );
-}//NoteEditor y Notelist tienen codigo que sobra si no funciona el editar
+}
 
 export default App;

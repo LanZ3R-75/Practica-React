@@ -1,23 +1,26 @@
 import React, {useState, useRef, useEffect} from "react";
-//------EDITARNOTA
-function NoteEditor({ onSave, editarNota}){
 
-    //------ los state de title y content
+function NoteEditor({ onSave, editarNota}){
+    
     const [title, setTitle] = useState(editarNota ? editarNota.title : '');
     const [content, setContent] = useState(editarNota ? editarNota.content : '');
     const titleRef = useRef(null);
 
-    //------
     useEffect(() => {
         // Actualiza los campos cuando la nota que se está editando cambia
         setTitle(editarNota ? editarNota.title : '');
         setContent(editarNota ? editarNota.content : '');
     }, [editarNota]);
-    
-    //-------- onSave
+
     const handleSubmit = (e) => {
 
        e.preventDefault();
+
+       if (!title.trim() || !content.trim()) {
+        alert('Por favor, rellena tanto titulo como contenido');
+        return;
+      }
+
        onSave({...editarNota, title, content});
        setTitle('');
        setContent('');
@@ -32,8 +35,9 @@ function NoteEditor({ onSave, editarNota}){
                 <label htmlFor="noteTitle" className="form-label">Título</label>
                 <input
                     type="text"
-                    className="form-control"
+                    className="form-control custom-textContainer-bg"
                     id="noteTitle"
+                    placeholder="Titulo..."
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     ref={titleRef}
@@ -43,7 +47,8 @@ function NoteEditor({ onSave, editarNota}){
             <div className="mb-3">
                 <label htmlFor="noteContent" className="form-label">Contenido</label>
                 <textarea
-                className="form-control"
+                placeholder="Contenido de la nota..."
+                className="form-control custom-textContainer-bg"
                 id="noteContent"
                 rows="3"
                 value={content}

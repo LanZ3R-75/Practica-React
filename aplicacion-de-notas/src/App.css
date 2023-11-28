@@ -13,6 +13,22 @@
   }
 }
 
+
+body {
+  background-color: #f0eaff; /* Un lila pastel suave */
+}
+
+.custom-textContainer-bg {
+  background-color: #c9ebf5; /* Gris claro */
+  border: #92dcda;
+}
+
+.custom-textContainer-bg:focus {
+  background-color: #c9ebf5; /* Mantener el mismo color de fondo al enfocarse */
+   /* Opcional: elimina el box-shadow si lo deseas */
+  /* Puedes añadir o modificar otros estilos para el estado :focus según necesites */
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,6 +44,20 @@
   color: #61dafb;
 }
 
+.btn-custom-green {
+  background-color: #28a745; /* Un ejemplo de tono de verde */
+  border-color: #28a745;
+  color: rgb(255, 250, 250);
+}
+
+.btn-custom-green:hover {
+  background-color: #218838; /* Un verde más oscuro para el hover */
+  border-color: #1e7e34;
+  color: rgb(255, 250, 250);
+}
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +66,5 @@
     transform: rotate(360deg);
   }
 }
+
+
