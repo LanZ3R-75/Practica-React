@@ -6,18 +6,22 @@ function NoteEditor({ onSave, editarNota}){
     const [content, setContent] = useState(editarNota ? editarNota.content : '');
     const titleRef = useRef(null);
 
+    //Effect para actualizar los campos de la nota que se esta editando
     useEffect(() => {
-        // Actualiza los campos cuando la nota que se está editando cambia
+        
         setTitle(editarNota ? editarNota.title : '');
         setContent(editarNota ? editarNota.content : '');
+
     }, [editarNota]);
+
+    //Funcion para manejar el guardado de la nota (el submit)
 
     const handleSubmit = (e) => {
 
        e.preventDefault();
 
        if (!title.trim() || !content.trim()) {
-        alert('Por favor, rellena tanto titulo como contenido');
+        alert('Por favor, rellena tanto titulo como contenido'); //un alert para gestionar las notas vacias
         return;
       }
 

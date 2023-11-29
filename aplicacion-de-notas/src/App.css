@@ -13,37 +13,41 @@
   }
 }
 
+/*Fondo de la pagina*/
 
 body {
-  background-color: #f0eaff; /* Un lila pastel suave */
+  background-color: #f0eaff; 
 }
 
+/* Fondo de los contenedores de texto */
+
 .custom-textContainer-bg {
-  background-color: #c9ebf5; /* Gris claro */
+
+  background-color: #c9ebf5; 
   border: #92dcda;
   
 }
 
 .custom-textContainer-bg:focus {
-  background-color: #c9ebf5; /* Mantener el mismo color de fondo al enfocarse */
-   /* Opcional: elimina el box-shadow si lo deseas */
-  /* Puedes añadir o modificar otros estilos para el estado :focus según necesites */
+
+  background-color: #c9ebf5; 
 }
 
+/* formato de las notas */
 .note-container {
-  background-color: #c9ebf5; /* Color amarillo de post-it */
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 1); /* Sombra suave */
-  border-radius: 20px; /* Bordes ligeramente redondeados */
+  background-color: #c9ebf5; 
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 1); 
+  border-radius: 20px; 
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 15px;
-  border: none; /* Elimina el borde */
+  border: none; 
   box-shadow: none;
 }
 
 .note-container:hover {
-  transform: rotate(-4deg); /* Rotación neutral al pasar el cursor */
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el cursor */
+  transform: rotate(3deg); 
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); 
 }
 
 
@@ -63,18 +67,25 @@ body {
   color: #61dafb;
 }
 
+/* Estilo para el boton verde */
+
 .btn-custom-green {
-  background-color: #28a745; /* Un ejemplo de tono de verde */
+  background-color: #28a745; 
   border-color: #28a745;
   color: rgb(255, 250, 250);
 }
 
 .btn-custom-green:hover {
-  background-color: #218838; /* Un verde más oscuro para el hover */
+  background-color: #218838; 
   border-color: #1e7e34;
   color: rgb(255, 250, 250);
 }
 
+/* tamaño del logo */
+.img-logo {
+  max-width: 100px; 
+  max-height: 100px; 
+}
 
 
 @keyframes App-logo-spin {

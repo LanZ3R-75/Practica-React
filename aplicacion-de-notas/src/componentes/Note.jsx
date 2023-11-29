@@ -1,7 +1,8 @@
 import React from "react";
-import anime from 'animejs/lib/anime.es.js'; // Importa Anime.js
+import anime from 'animejs/lib/anime.es.js'; // Importa Animejs
 
 function Note({ note, onDelete, onEdit }) {
+
   // Función para manejar la eliminación con animación
   const handleDeleteWithAnimation = () => {
     const uniqueClass = `note-${note.id}`;
