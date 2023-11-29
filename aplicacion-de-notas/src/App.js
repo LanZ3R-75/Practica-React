@@ -60,7 +60,7 @@ function App() {
   return (
     <div className="container mt-5">
       <h1 className="text-center my-4">Aplicación de Notas</h1>
-      <div className="mb-4">
+      <div className="mb-5">
         <h5 htmlFor="noteTitle" className="form-label">Buscar</h5>
         <input
           type="text"
@@ -74,7 +74,7 @@ function App() {
       
       <NoteEditor onSave={handleSaveNote} onEdit={handleEditNote} editarNota={editarNota}/>
 
-      <h5 htmlFor="noteTitle" className="form-label">Lista de Notas</h5>
+      <h5 htmlFor="noteTitle" className="form-label mt-5 mb-3">Lista de Notas</h5>
 
       <Notelist notes={filteredNotes} onDelete={handleDeleteNote} onEdit={handleEditNote}/>
 
